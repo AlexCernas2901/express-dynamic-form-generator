@@ -6,6 +6,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 
 const app = express()
+const port = process.env.PORT
 
 app.use(express.json())
 
@@ -19,6 +20,6 @@ app.get('/', (req, res) => {
 app.use('/forms', formRoutes)
 
 dbConection()
-app.listen(3000, () => {
-  console.log('Server on port 3000')
+app.listen(port, () => {
+  console.log(`Server on port ${port}`)
 })
